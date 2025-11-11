@@ -67,7 +67,8 @@ Notionはページ内にページを作成して階層化します。
 
 ### Tag DB
 
-まずはメタ情報となるタグを格納するDBを作成します。
+まずはメタ情報となるタグを格納するDBを作成します。  
+DBは「データベース: フルページ」で作成します。
 
 ![tag-database-command.png](./assets/tag-database-command.png)
 
@@ -89,9 +90,8 @@ Notionはページ内にページを作成して階層化します。
   </tr>
 </table>
 
-レコードを追加してみましょう。
-
-と、その前にタグカテゴリを作ります。
+レコードを追加する前にタグカテゴリを作成します。  
+フォームに作成したいタグカテゴリ名を入力し、エンターを押すことで新規にタグカテゴリが作成されます。
 
 ![tag-category.png](./assets/tag-category.png)
 
@@ -102,7 +102,57 @@ Notionはページ内にページを作成して階層化します。
 
 ### Idea Note DB
 
-アイディアノートを格納するDBを作ります。
+アイディアノートを格納するDBを作ります。  
+Tag DBで行ったのと同様に、DBを作成しましょう。  
+「データベース: フルページ」で作成します。
+
+![idea-database-command.png](./assets/idea-database-command.png)
+
+下記のようになります。
+
+<table>
+  <tr>
+    <td><img src="./assets/idea-db-page-empty.png" alt="idea-db-page-empty.png"></td>
+    <td><img src="./assets/idea-db-page-block.png" alt="idea-db-page-block.png"></td>
+  </tr>
+</table>
+
+Idea DBにプロパティを追加します。  
+本書ではシンプルにTag DBとのリレーションのみを追加します。
+
+1. リレーションプロパティの追加を選択
+
+![idea-db-add-tag-db-relation.png](./assets/idea-db-add-tag-db-relation.png)
+
+2. リレーション対象に、先ほど作成したTag DBを選択
+
+![idea-db-relation-target-tag-db.png](./assets/idea-db-relation-target-tag-db.png)
+
+3. 「リレーションを追加する」をクリック
+
+![idea-db-add-relation-confirm.png](./assets/idea-db-add-relation-confirm.png)
+
+Tag DBにはタグカテゴリも用意しているため、ロールアップ機能を用いてリレーションを貼ったタグのカテゴリもプロパティとして持たせます。
+
+1. ロールアッププロパティの追加を選択
+
+![idea-db-add-tag-db-rollup.png](./assets/idea-db-add-tag-db-rollup.png)
+
+2. 「プロパティを編集」 > 「リレーション」 > 「tags」を選択
+
+![idea-db-edit-rollup-propaty.png](./assets/idea-db-edit-rollup-propaty.png)
+
+3. 「ターゲットプロパティ」に「カテゴリ」を選択
+
+![idea-db-edit-rollup-target-tag-propaty.png](./assets/idea-db-edit-rollup-target-tag-propaty.png)
+
+4. プロパティ名を「タグカテゴリに変更」
+
+![idea-db-edit-rollup-colum-name.png](./assets/idea-db-edit-rollup-colum-name.png)
+
+下記キャプチャのようになっていれば成功です。
+
+![idea-db-complete-column-empty.png](./assets/idea-db-complete-column-empty.png)
 
 ### Permanent Note DB
 
@@ -111,6 +161,8 @@ Notionはページ内にページを作成して階層化します。
 ### Structure Note DB
 
 ストラクチャーノートを格納するDBを作ります。
+
+## インラインDBを表示させる
 
 # 利用実例
 
