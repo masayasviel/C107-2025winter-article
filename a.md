@@ -48,49 +48,49 @@ DBはいずれも「データベース: フルページ」で作成します。
 
 Notionはページ内にページを作成して階層化します。  
 今回はDBを4つDBを作成する必要があるため、ページを作成しまとめる箇所を最初に作っておくとページが綺麗になります。  
-「コールアウト」を用いてDBのページをまとめておく部分をページ上に作成しましょう。
+「コールアウト」を用いてDBのページをまとめておく部分をページ上に作成しましょう。  
+`/callout` でコールアウトブロックを作成できます。
 
 ![callout-command.png](./assets/callout-command.png)
 
-<table>
-  <tr>
-    <td><img src="./assets/callout-icon.png" alt="callout-icon.png"></td>
-    <td><img src="./assets/callout-title.png" alt="callout-title.png"></td>
-  </tr>
-</table>
+コールアウトブロックには絵文字が設定できます。  
+せっかくなので設定してみましょう。  
+コールアウトブロック右側の絵文字部分をクリックし、「アイコン」タブで `database` を入力。それっぽいアイコンを見つけたら色を選択して設定できます。
+
+![callout-icon.png](./assets/callout-icon.png)
+
+コールアウトブロックの一番上に「DB」と入力して、太字にすることでそれっぽくできます。  
+コールアウトブロック内に、見出しブロックを配置したり、コールアウトブロックを配置したりもできます。
+
+![callout-title.png](./assets/callout-title.png)
 
 ### Tag DB
 
 まずはメタ情報となるタグを格納するDBを作成します。  
+`/database` でデータベースブロックを作成できます。  
 DBは「データベース: フルページ」で作成します。
 
 ![tag-database-command.png](./assets/tag-database-command.png)
 
-下記のようになります。
+作成直後は下記キャプチャのようになります。
 
-<table>
-  <tr>
-    <td><img src="./assets/tag-db-page-empty.png" alt="tag-db-page-empty.png"></td>
-    <td><img src="./assets/tag-db-page-block.png" alt="tag-db-page-block.png"></td>
-  </tr>
-</table>
+![tag-db-page-empty.png](./assets/tag-db-page-empty.png)
 
-なくてもOKですが、タグもカテゴライズした方が便利なのでtags DBにプロパティを追加します。
+なくてもOKですが、タグもカテゴライズした方が便利なのでtags DBにプロパティを追加します。  
+DBヘッダーの「＋」をクリックし、「種類を選択」で「選択」を選択します。
 
-<table>
-  <tr>
-    <td><img src="./assets/tag-db-propaty-select.png" alt="tag-db-propaty-select.png"></td>
-    <td><img src="./assets/tag-db-propaty-category.png" alt="tag-db-propaty-category.png"></td>
-  </tr>
-</table>
+![tag-db-propaty-select.png](./assets/tag-db-propaty-select.png)
 
-レコードを追加する前にタグカテゴリを作成します。  
+プロパティ名を「カテゴリ」とします。
+
+![tag-db-propaty-category.png](./assets/tag-db-propaty-category.png)
+
+タグカテゴリプロパティを作成します。  
 フォームに作成したいタグカテゴリ名を入力し、エンターを押すことで新規にタグカテゴリが作成されます。
 
 ![tag-category.png](./assets/tag-category.png)
 
-レコードを追加します。  
-右上の「新規」または、DB末尾の「新規ページ」をクリックすることで新規レコードが追加できます。
+レコードを追加するには、右上の「新規」または、DB末尾の「新規ページ」をクリックすることで新規レコードが追加できます。
 
 ![tag-db-records.png](./assets/tag-db-records.png)
 
@@ -101,15 +101,6 @@ Tag DBで行ったのと同様に、DBを作成しましょう。
 「データベース: フルページ」で作成します。
 
 ![idea-database-command.png](./assets/idea-database-command.png)
-
-下記のようになります。
-
-<table>
-  <tr>
-    <td><img src="./assets/idea-db-page-empty.png" alt="idea-db-page-empty.png"></td>
-    <td><img src="./assets/idea-db-page-block.png" alt="idea-db-page-block.png"></td>
-  </tr>
-</table>
 
 Idea DBにプロパティを追加します。  
 本書ではシンプルにTag DBとのリレーションのみを追加します。
@@ -185,6 +176,68 @@ Tag DBにはタグカテゴリも用意しているため、ロールアップ�
 
 ## インラインDBを表示させる
 
-# 利用実例
+DBへのレコード追加を使いやすくするため、このZettelkastenを使うハードルを下げるため、データベースを構築したトップページ配下にインラインでDBを表示させます。
+
+### 区切りのための見出し
+
+まずは区切りをわかりやすくするため、見出しを用意します。  
+`# ` で「見出し1」ブロックを作成できます。  
+`#` の数で見出しNを指定できます。  
+Notionでは、見出しは1〜3まで作成できます。
+
+![midashi-1.png](./assets/midashi-1.png)
+
+ここで見出しを用いた区切りを行う際に、より区切りをわかりやすくするためのテクニックを紹介します。  
+「絵文字」 + 「背景色」を用います。
+
+`:` + `{絵文字名}` で絵文字を表示できます。また、 `/emoji` で絵文字をUI上から選択することができます。
+
+![midashi-emoji-check.png](./assets/midashi-emoji-check.png)
+
+ブロック横のメニューアイコンをクリック → 「カラー」を選択することで、文字色や背景色を設定することができます。
+
+![midashi-background-color.png](./assets/midashi-background-color.png)
+
+### インラインDBの表示
+
+続いて、インラインDBを表示させます。  
+`/database` で「データベース: インライン」を選択します。
+
+![inline-db.png](./assets/inline-db.png)
+
+作成するとDBを新規に作成するか、既存のものを用いるか訊かれます。
+「既存のデータベースにリンク」を選択し、対象のデータベースを選択します。  
+
+![inline-db-exist-db-link.png](./assets/inline-db-exist-db-link.png)
+
+ここでは「Idea」のDBを表示させたいので、「Idea DB」を選択します。
+
+![inline-db-idea-db-link.png](./assets/inline-db-idea-db-link.png)
+
+このやり方で、下記順にページを拡充させましょう。  
+私の選択したページの絵文字と色を下記にまとめます。
+
+| DB | 絵文字 | 背景色 |
+| --- | --- | --- |
+| Idea | check | 緑 |
+| Permanent | clipboard | 黄色 |
+| Structure | folder | グレー |
+| Tag | bookmark | ブラウン |
+
+
+下記のようになっていれば成功です。
+
+![zettelkasten.png](./assets/zettelkasten.png)
 
 # おわりに
+
+以上、ZettelkastenをNotionで構築する手法でした。
+
+メモ管理術やツール、利用していくAIには人によって合う合わないがあります。  
+今回はNotionで構築したため、Notion AIと相性が良いですが、別のAIツールを用いるために冒頭に記載したObsidianを用いるのも手でしょう。  
+また、今回記載したZettelkastenを自分なりにカスタマイズしていく、もしくはZettelkastenを使わないというのも良いと考えます。  
+今回の目的はアウトプットを出すことなので、過程は十人十色です。私にとってその「過程」を支えるツールがNotionであり、手法が「Zettelkasten」でした。  
+ここまで書いておいてですが、インターネットで検索をかければ構築方法が様々公開されていますし、Youtubeで検索をかければ動画で構築する手法がたくさん転がっています。  
+試行錯誤して自分に合った過程を支えるやり方を見つけていただけたらと思います。  
+本書はその試行錯誤の一案として役に立っていただけたら冥利につきます。  
+以上、拙い文章ですが、ここまで読んでいただきありがとうございました。
